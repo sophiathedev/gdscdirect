@@ -1,4 +1,4 @@
-# GdscDirect: discord Bot for calculate the Social Credits, handling roll-call
+# GdscDirect: discord Bot for calculate the Social Credits, handling roll-call for member
 
 
 ## Installation
