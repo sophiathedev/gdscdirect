@@ -12,7 +12,7 @@ defmodule GdscDirect.Scheduler.ResetDailyVisit do
   @spec init(any()) :: {:ok, any()}
   def init(state) do
     Process.send_after(self(), :worker, ms_til_utc_midnight())
-    Logger.info("Started task reset daily visit")
+    Logger.info("Started initialize task reset daily visit")
     {:ok, state}
   end
 
