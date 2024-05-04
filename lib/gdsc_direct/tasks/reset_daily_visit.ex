@@ -22,6 +22,7 @@ defmodule GdscDirect.Scheduler.ResetDailyVisit do
     now = DateTime.utc_now()
     unix_now_ms = DateTime.to_unix(now, :millisecond)
 
+    # get next midnight by adding one day into current utc time
     tommorow = now |> DateTime.add(1, :day) |> DateTime.to_date()
     tommorow_midnight = DateTime.new!(tommorow, Time.new!(0, 0, 0))
     tommorow_midnight_unix_ms = tommorow_midnight |> DateTime.to_unix(:millisecond)

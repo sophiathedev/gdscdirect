@@ -28,16 +28,15 @@ defmodule GdscDirect.Forms.DailyVisit do
 
   @spec handle_event(Nostrum.Struct.Interaction.t()) :: {:ok}
   def handle_event(interaction) do
-    # handle the user already visited
+    # handle if the user already visited
     already_visited =
       Database.select(:user, [:visited], "where discord_id = \'#{interaction.member.user_id}\'")
       |> Database.first_row()
       |> Enum.at(0)
 
-    _status =
-      if already_visited == 1,
-        do: handle_event_already_visited(interaction),
-        else: handle_event_default(interaction)
+    if already_visited == 1,
+      do: handle_event_already_visited(interaction),
+      else: handle_event_default(interaction)
   end
 
   @doc "this function will handle the event that user already visited on a day"
