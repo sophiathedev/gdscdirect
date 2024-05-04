@@ -103,7 +103,6 @@ defmodule GdscDirect.Forms.DailyVisit do
   defp random_visit_complete() do
     list_msg = [
       "Bravo! **Cố gắng duy trì mỗi ngày nhé !**",
-      "Tuyệt quá một con dân nữa lại thèm Social Credits rồi, **cố gắng điểm danh hàng ngày nhé !**"
     ]
 
     list_msg |> Enum.shuffle() |> Enum.random()
